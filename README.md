@@ -1,5 +1,6 @@
-Run Jasmine 2 specs using PhantomJS
-===================================
+jasmine-runner-node
+====================
+ - Run Jasmine 2 specs with (or without) PhantomJS
  - Compatible with any task runner
  - Uses official jasmine-core node module
  - Doesn't generate temporary spec runner files
