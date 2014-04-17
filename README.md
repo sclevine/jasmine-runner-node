@@ -8,6 +8,10 @@ jasmine-runner-node
  - Detects added/removed spec/js/css files
  - Perfect for use with [gulp.js](http://gulpjs.com/)
 
+Installation
+============
+In your project root, run: `npm install jasmine-runner-node --save-dev`
+
 Usage
 =====
 ``` javascript
@@ -43,6 +47,14 @@ jasmine.run({
 Testing
 =======
 Run `npm test` :)
+
+Caveats
+=======
+The jasmine-core node module must be pulled in as a dependency of
+jasmine-runner-node and not of any parent module, as it expects jasmine-core
+to be present in `jasmine-runner-node/node_modules`. This means that
+jasmine-core should not be a direct dependency of any node package that
+depends on jasmine-runner-node.
 
 (more docs coming soon)
 
