@@ -22,7 +22,6 @@
   "author": "Stephen Levine <stephen.levine@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "jasmine-core": "^2.0.0",
     "phantomjs": "^1.9.7-1",
     "handlebars": "^1.3.0",
     "connect": "^2.14.3",
