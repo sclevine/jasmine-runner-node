@@ -2,7 +2,6 @@ jasmine-runner-node
 ====================
  - Run Jasmine 2 specs with (or without) PhantomJS
  - Compatible with any task runner
- - Uses official jasmine-core node module
  - Doesn't generate temporary spec runner files
  - Doesn't require an external phantom installation
  - Detects added/removed spec/js/css files
@@ -47,15 +46,3 @@ jasmine.run({
 Testing
 =======
 Run `npm test` :)
-
-Caveats
-=======
-The jasmine-core node module must be pulled in as a dependency of
-jasmine-runner-node and not of any parent module, as it expects jasmine-core
-to be present in `jasmine-runner-node/node_modules`. This means that
-jasmine-core should not be a direct dependency of any node package that
-depends on jasmine-runner-node.
-
-(more docs coming soon)
-
-
