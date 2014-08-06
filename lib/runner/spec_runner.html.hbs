@@ -42,7 +42,10 @@
                 var reporter = new ConsoleReporter({
                     timer: new jasmine.Timer,
                     print: {{{phantomPrintFunction}}},
-                    showColors: {{{showColors}}}
+                    showColors: {{{showColors}}},
+                    onComplete: function (success) {
+                        console.log('JASMINE_TESTS_' + (success ? 'PASS' : 'FAIL'));
+                    }
                 });
                 jasmine.getEnv().addReporter(reporter);
             })();
