@@ -35,19 +35,23 @@
         <script src="app/{{{this}}}" type="text/javascript"></script>
     {{/each}}
 
-    {{#if forPhantom}}
-        <script type="text/javascript">
-            (function() {
+    <script type="text/javascript">
+        (function() {
+            if (window._phantom) {
                 var ConsoleReporter = jasmineRequire.ConsoleReporter();
                 var reporter = new ConsoleReporter({
                     timer: new jasmine.Timer,
                     print: {{{phantomPrintFunction}}},
-                    showColors: {{{showColors}}}
+                    showColors: {{{showColors}}},
+                    onComplete: function (success) {
+                        window._phantom.jasminePassed = success;
+                        window.close();
+                    }
                 });
                 jasmine.getEnv().addReporter(reporter);
-            })();
-        </script>
-    {{/if}}
+            }
+        })();
+    </script>
 
 </head>
 <!-- TODO: turbolinks breaks spec filter links -->

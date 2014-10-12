@@ -25,11 +25,10 @@ describe("#buildSpecRunner", function() {
     expect(filesObjCopy.test).toBe('test');
   });
 
-  it("should pass the showColor and forPhantom options to the template via the files object", function() {
-    util.buildSpecRunner({}, 'color boolean', 'phantom boolean');
+  it("should pass the showColor option to the template via the files object", function() {
+    util.buildSpecRunner({}, 'color boolean');
     var filesObjCopy = this.compileResultSpy.calls.argsFor(0)[0];
     expect(filesObjCopy.showColors).toBe('color boolean');
-    expect(filesObjCopy.forPhantom).toBe('phantom boolean');
   });
 
   it("should pass a stringified stack shortener to the template via the files object ", function() {
