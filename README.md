@@ -20,7 +20,6 @@ var jasmine = require('jasmine-runner-node');
 // start server
 jasmine.start({
   root: <dir>,          // project root (default: client module root)
-  updateInterval: <ms>, // how often to check for file changes (default: 1000)
   port: <num>,          // port number to serve jasmine on (default: 8888)
   files: {              // (in order of spec runner inclusion)
     css: <file glob or glob list>,
@@ -35,7 +34,7 @@ jasmine.start({
 jasmine.stop()
 
 // start server, run phantom, stop server
-// (also takes all of the above, except updateInterval)
+// (also takes all options above)
 jasmine.run({
   showColors: <bool>,      // colorize phantomjs output (default: true)
   testOutput: <stream>,    // stream for test report output (default: stdout)
